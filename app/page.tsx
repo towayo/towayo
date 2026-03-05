@@ -19,7 +19,7 @@ const T = {
     heroCta1: '無料相談を申し込む',
     heroCta2: 'サービス詳細',
     stats: [
-      { num: '1', unit: 'プラン', label: 'すべて込み' },
+      { num: '', unit: 'プラン', label: 'すべて込み' },
       { num: '1対1', unit: '専属制', label: '担当者固定' },
       { num: '韓・日', unit: 'バイリンガル', label: '在宅スタッフ' },
       { num: '最短', unit: '1週間', label: 'サービス開始' },
@@ -39,7 +39,7 @@ const T = {
       { icon: Globe, title: 'ビザ・在留資格', desc: '経営管理ビザの取得サポート。在留資格に関する基本的な情報提供と専門家へのつなぎ役。' },
     ],
     pricingTag: '料金プラン',
-    pricingTitle: 'シンプルな\n1プラン制',
+    pricingTitle: 'シンプルな\nワンプラン',
     pricingDesc: 'すべてのサービスが含まれた月額定額制。複雑な料金体系は一切ありません。',
     initialFee: '初期費用',
     initialPrice: '¥1,000,000〜',
@@ -123,7 +123,7 @@ const T = {
     heroCta1: '무료 상담 신청',
     heroCta2: '서비스 상세',
     stats: [
-      { num: '1', unit: '플랜', label: '모두 포함' },
+      { num: '', unit: '플랜', label: '모두 포함' },
       { num: '1:1', unit: '전담제', label: '담당자 고정' },
       { num: '한·일', unit: '바이링구얼', label: '재택 스태프' },
       { num: '최단', unit: '1주일', label: '서비스 시작' },
@@ -143,7 +143,7 @@ const T = {
       { icon: Globe, title: '비자・재류 자격', desc: '경영관리 비자 취득 지원. 재류 자격에 관한 기본 정보 제공 및 전문가 연결.' },
     ],
     pricingTag: '요금 플랜',
-    pricingTitle: '심플한\n1플랜제',
+    pricingTitle: '심플한\n원 플랜',
     pricingDesc: '모든 서비스가 포함된 월정액제. 복잡한 요금 체계는 일절 없습니다.',
     initialFee: '초기 비용',
     initialPrice: '¥1,000,000~',
@@ -227,7 +227,7 @@ const T = {
     heroCta1: 'Book a Free Consultation',
     heroCta2: 'View Services',
     stats: [
-      { num: '1', unit: 'Plan', label: 'All-inclusive' },
+      { num: '', unit: 'Plan', label: 'All-inclusive' },
       { num: '1:1', unit: 'Dedicated', label: 'Fixed contact' },
       { num: 'KO/JA', unit: 'Bilingual', label: 'Remote staff' },
       { num: 'From', unit: '1 week', label: 'To start' },
@@ -495,8 +495,8 @@ export default function Home() {
             <div className="afu d5" style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {t.stats.map((s, i) => (
                 <div key={i} style={{ borderLeft: '2px solid rgba(200,87,42,.28)', paddingLeft: '1rem' }}>
-                  <div style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.6rem', fontWeight: 600, color: '#C8572A', lineHeight: 1 }}>{s.num}</div>
-                  <div style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.62rem', color: '#9A7A5A', letterSpacing: '.08em', marginTop: '.1rem' }}>{s.unit}</div>
+                  {s.num && <div style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.6rem', fontWeight: 600, color: '#C8572A', lineHeight: 1 }}>{s.num}</div>}
+                  <div style={{ fontFamily: s.num ? 'Noto Sans JP,sans-serif' : 'Cormorant Garamond,serif', fontSize: s.num ? '.62rem' : '1.4rem', fontWeight: s.num ? 400 : 600, color: s.num ? '#9A7A5A' : '#C8572A', letterSpacing: '.08em', marginTop: '.1rem' }}>{s.unit}</div>
                   <div style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.7rem', color: '#7A6A5A', marginTop: '.15rem' }}>{s.label}</div>
                 </div>
               ))}
@@ -850,7 +850,6 @@ function AboutSection({ t }: { t: typeof T[keyof typeof T] }) {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
                 {[
                   { label: t.langCode === 'ko' ? '대표이사' : t.langCode === 'en' ? 'CEO' : '代表取締役', value: '柳・森' },
-                  { label: t.langCode === 'ko' ? '임원' : t.langCode === 'en' ? 'Directors' : '役員', value: '高・趙' },
                   { label: t.langCode === 'ko' ? '사업 형태' : t.langCode === 'en' ? 'Entity' : '事業形態', value: t.langCode === 'en' ? 'KK (Corp.)' : '株式会社' },
                   { label: t.langCode === 'ko' ? '거점' : t.langCode === 'en' ? 'Location' : '拠点', value: 'Tokyo' },
                 ].map(({ label, value }, i) => (
@@ -909,8 +908,18 @@ function ContactForm({ t }: { t: typeof T[keyof typeof T] }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); setLoading(true)
-    await new Promise(r => setTimeout(r, 1000))
-    setSent(true); setLoading(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) setSent(true)
+      else alert('送信に失敗しました。しばらく後にお試しください。')
+    } catch {
+      alert('送信に失敗しました。しばらく後にお試しください。')
+    }
+    setLoading(false)
   }
 
   if (sent) return (
