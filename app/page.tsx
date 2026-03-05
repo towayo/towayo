@@ -478,11 +478,17 @@ export default function Home() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: 68 }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,#FAF6F0 0%,#F5EDE3 45%,#FAF6F0 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(ellipse 80% 60% at 72% 40%,rgba(200,87,42,.07) 0%,transparent 70%)' }} />
-        <div style={{ position: 'absolute', right: -130, top: '3%', width: 620, height: 620, border: '1px solid rgba(200,87,42,.09)', borderRadius: '50%', animation: 'float 7s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', right: -50, top: '10%', width: 460, height: 460, border: '1px solid rgba(200,87,42,.06)', borderRadius: '50%', animation: 'pulse 9s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', right: '8%', top: '22%', width: 280, height: 280, border: '1px solid rgba(200,87,42,.11)', borderRadius: '50%' }} />
-        <div style={{ position: 'absolute', right: '5%', top: '8%', fontFamily: 'Noto Serif JP,serif', fontSize: '14rem', fontWeight: 200, color: 'rgba(200,87,42,.035)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>共</div>
+        {/* Tokyo photo - right side */}
+        <div style={{
+          position: 'absolute', right: 0, top: 0, width: '48%', height: '100%',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1400&auto=format&fit=crop&q=85)',
+          backgroundSize: 'cover', backgroundPosition: 'top center',
+        }}>
+          {/* Fade left edge into cream */}
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.5) 30%, transparent 70%)' }} />
+          {/* Subtle warm overlay */}
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,87,42,0.06)' }} />
+        </div>
         <div style={{ position: 'absolute', top: 0, right: '33%', width: 1, height: '100%', background: 'linear-gradient(to bottom,transparent,rgba(200,87,42,.12) 40%,transparent)', transform: 'rotate(7deg)', transformOrigin: 'top center' }} />
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '6rem 2rem', width: '100%', position: 'relative', zIndex: 1 }}>
