@@ -599,7 +599,7 @@ function SH({ tag, title, sub, center, dark }: { tag: string; title: string; sub
   )
 }
 
-function ServicesSection({ t }: { t: typeof T['ja'] }) {
+function ServicesSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   const svcTitles = [t.planItems[0], t.planItems[1], t.planItems[2], t.planItems[3], t.planItems[4], t.planItems[5], t.planItems[6] ?? '', t.planItems[7] ?? '']
   const svcDescs: Record<string, string[]> = {
@@ -630,7 +630,7 @@ function ServicesSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function SetupSection({ t }: { t: typeof T['ja'] }) {
+function SetupSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section id="setup" style={{ background: '#FAF6F0', padding: '7rem 0' }}>
@@ -670,7 +670,7 @@ function SetupSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function PricingSection({ t }: { t: typeof T['ja'] }) {
+function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section id="pricing" style={{ background: '#1a1510', padding: '7rem 0' }}>
@@ -727,7 +727,7 @@ function PricingSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function WhySection({ t }: { t: typeof T['ja'] }) {
+function WhySection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section id="why" style={{ background: '#F5EDE3', padding: '7rem 0' }}>
@@ -767,7 +767,7 @@ function WhySection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function StepsSection({ t }: { t: typeof T['ja'] }) {
+function StepsSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section style={{ background: '#1a1510', padding: '7rem 0' }}>
@@ -796,7 +796,7 @@ function StepsSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function VoicesSection({ t }: { t: typeof T['ja'] }) {
+function VoicesSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section style={{ background: '#FAF6F0', padding: '7rem 0' }}>
@@ -822,7 +822,7 @@ function VoicesSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function AboutSection({ t }: { t: typeof T['ja'] }) {
+function AboutSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section id="about" style={{ background: '#F5EDE3', padding: '7rem 0' }}>
@@ -868,7 +868,7 @@ function AboutSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function ContactSection({ t }: { t: typeof T['ja'] }) {
+function ContactSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
   return (
     <section id="contact" style={{ background: '#1a1510', padding: '7rem 0' }}>
@@ -902,7 +902,7 @@ function ContactSection({ t }: { t: typeof T['ja'] }) {
   )
 }
 
-function ContactForm({ t }: { t: typeof T['ja'] }) {
+function ContactForm({ t }: { t: typeof T[keyof typeof T] }) {
   const [form, setForm] = useState({ name: '', company: '', email: '', inquiry: '', message: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
