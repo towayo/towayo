@@ -106,7 +106,7 @@ const T = {
     formDone: '送信完了',
     formDoneMsg: 'お問い合わせを受け付けました。\n2営業日以内にご連絡いたします。',
     formPrivacy: '送信いただいた情報は、お問い合わせへの対応のみに使用します。',
-    footerDesc: '韓国企業の日本進出を\n共に歩むパートナーです。',
+    footerDesc: '韓国企業の日本進出を\n共に歩むパートナー��す。',
     copyright: '© 2025 TOWAYO Inc. All rights reserved.',
   },
 
@@ -396,7 +396,7 @@ export default function Home() {
         .whyrow{transition:padding-left .25s}.whyrow:hover{padding-left:.6rem}
         ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#EDE4DA}::-webkit-scrollbar-thumb{background:#C8572A;border-radius:3px}
         input:focus,textarea:focus,select:focus{border-color:#C8572A!important;box-shadow:0 0 0 3px rgba(200,87,42,.08)}
-        @media(max-width:768px){.dsk{display:none!important}.mob{display:flex!important}.grid2{grid-template-columns:1fr!important}.grid4{grid-template-columns:1fr 1fr!important}}
+        @media(max-width:768px){.dsk{display:none!important}.mob{display:flex!important}.grid2{grid-template-columns:1fr!important}.grid2>*{grid-column:span 1!important}.grid4{grid-template-columns:1fr 1fr!important}}
         @media(min-width:769px){.mob{display:none!important}}
       `}</style>
 
@@ -620,6 +620,7 @@ function SH({ tag, title, sub, center, dark }: { tag: string; title: string; sub
 
 function ServicesSection({ t }: { t: typeof T[keyof typeof T] }) {
   const { ref, inView } = useInView()
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
   const svcTitles = [t.planItems[0], t.planItems[1], t.planItems[2], t.planItems[3], t.planItems[4], t.planItems[5], t.planItems[6] ?? '', t.planItems[7] ?? '']
   const svcDescs: Record<string, string[]> = {
     ja: ['郵便物の受領・スキャン・転送・内容報告。日本語の複雑な書類も丁寧に処理します。', '日韓バイリンガルによるメール・電話対応。契約書・プレスリリースなどの翻訳。', 'アポイント調整、出張・会議・展示会の予約手配を一括管理。', '経費精算チェック、データ入力・整理、月次・週次レポート作成。', '議事録・文字起こし、報告書・書状データ作成、市場リサーチ対応。', '商談・打ち合わせへの通訳同行（月1回）。展示会出展サポート。', '法人住所の提供、銀行口座開設サポート。物理的拠点なしで運営可能。', 'ホームページ構築、SNS運営代行、定期プレスリリース配信。'],
@@ -629,20 +630,192 @@ function ServicesSection({ t }: { t: typeof T[keyof typeof T] }) {
   const langKey = t.langCode === 'ko' ? 'ko' : t.langCode === 'en' ? 'en' : 'ja'
   const descs = svcDescs[langKey]
 
+  // Bento grid layout: first two items are large (featured), rest are standard
+  const bentoSpans = [
+    { col: 'span 2', row: 'span 1', featured: true },
+    { col: 'span 2', row: 'span 1', featured: true },
+    { col: 'span 1', row: 'span 1', featured: false },
+    { col: 'span 1', row: 'span 1', featured: false },
+    { col: 'span 1', row: 'span 1', featured: false },
+    { col: 'span 1', row: 'span 1', featured: false },
+    { col: 'span 1', row: 'span 1', featured: false },
+    { col: 'span 1', row: 'span 1', featured: false },
+  ]
+
   return (
-    <section id="services" style={{ background: '#F5EDE3', padding: '7rem 0' }}>
-      <div ref={ref} style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
-        <div className={`reveal ${inView ? 'in' : ''}`}><SH tag={t.svcTag} title={t.svcTitle} sub={t.svcDesc} /></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: '1.5px', background: '#D8CBBF' }}>
-          {SVC_SVGS.map((_icon, i) => (
-            <div key={i} className={`svc reveal ${inView ? 'in' : ''}`}
-              style={{ background: '#FAF6F0', padding: '2.2rem', position: 'relative', overflow: 'hidden', transitionDelay: `${i * .055}s` }}>
-              <div style={{ position: 'absolute', top: '1.2rem', right: '1.4rem', fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.58rem', letterSpacing: '.15em', color: 'rgba(200,87,42,.45)', textTransform: 'uppercase' }}>{SERVICES_EN[i]}</div>
-              <div style={{ marginBottom: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '3rem', height: '3rem', border: '1px solid rgba(200,87,42,0.2)', borderRadius: '50%', background: 'rgba(200,87,42,0.04)' }}>{SVC_SVGS[i]}</div>
-              <h3 style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.95rem', fontWeight: 500, color: '#1a1510', marginBottom: '.65rem', lineHeight: 1.4 }}>{svcTitles[i]}</h3>
-              <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.78rem', color: '#7A6A5A', lineHeight: 1.85 }}>{descs[i]}</p>
-            </div>
-          ))}
+    <section id="services" style={{ background: '#1a1510', padding: '8rem 0', position: 'relative', overflow: 'hidden' }}>
+      {/* Decorative background elements */}
+      <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,87,42,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-15%', left: '-5%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,87,42,0.04) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: '8%', left: '6%', fontFamily: 'Cormorant Garamond,serif', fontSize: '12rem', fontWeight: 300, color: 'rgba(200,87,42,0.03)', lineHeight: 1, userSelect: 'none', pointerEvents: 'none' }}>S</div>
+
+      <div ref={ref} style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 1 }}>
+        {/* Section header */}
+        <div className={`reveal ${inView ? 'in' : ''}`} style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
+            <div style={{ width: '3rem', height: '1px', background: 'linear-gradient(90deg, transparent, #C8572A)' }} />
+            <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.66rem', letterSpacing: '.3em', color: '#C8572A', textTransform: 'uppercase' }}>{t.svcTag}</span>
+            <div style={{ width: '3rem', height: '1px', background: 'linear-gradient(90deg, #C8572A, transparent)' }} />
+          </div>
+          <h2 style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: 'clamp(2.4rem,5vw,3.8rem)', fontWeight: 300, color: '#FAF6F0', letterSpacing: '.02em', marginBottom: '1rem' }}>{t.svcTitle}</h2>
+          <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.92rem', color: 'rgba(250,246,240,0.45)', fontWeight: 300, maxWidth: '520px', margin: '0 auto', lineHeight: 1.8 }}>{t.svcDesc}</p>
+        </div>
+
+        {/* Bento Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '1rem',
+        }} className="grid2">
+          {SVC_SVGS.map((_icon, i) => {
+            const isHovered = hoveredCard === i
+            const isFeatured = bentoSpans[i]?.featured
+            return (
+              <div
+                key={i}
+                className={`reveal ${inView ? 'in' : ''}`}
+                onMouseEnter={() => setHoveredCard(i)}
+                onMouseLeave={() => setHoveredCard(null)}
+                style={{
+                  gridColumn: isFeatured ? bentoSpans[i].col : bentoSpans[i]?.col || 'span 1',
+                  gridRow: bentoSpans[i]?.row || 'span 1',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  background: isHovered ? 'rgba(200,87,42,0.08)' : 'rgba(250,246,240,0.03)',
+                  border: `1px solid ${isHovered ? 'rgba(200,87,42,0.35)' : 'rgba(250,246,240,0.06)'}`,
+                  borderRadius: '2px',
+                  padding: isFeatured ? '2.8rem' : '2.2rem',
+                  cursor: 'default',
+                  transition: 'all 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transitionDelay: `${i * 0.06}s`,
+                  transform: isHovered ? 'translateY(-3px)' : 'translateY(0)',
+                  boxShadow: isHovered ? '0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px rgba(200,87,42,0.15)' : '0 2px 10px rgba(0,0,0,0.1)',
+                }}
+              >
+                {/* Top accent line */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: isHovered ? '100%' : '0%',
+                  height: '2px',
+                  background: 'linear-gradient(90deg, #C8572A, rgba(200,87,42,0.3))',
+                  transition: 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                }} />
+
+                {/* Number badge */}
+                <div style={{
+                  position: 'absolute',
+                  top: isFeatured ? '2rem' : '1.5rem',
+                  right: isFeatured ? '2rem' : '1.5rem',
+                  fontFamily: 'Cormorant Garamond,serif',
+                  fontSize: isFeatured ? '3.5rem' : '2.8rem',
+                  fontWeight: 300,
+                  color: isHovered ? 'rgba(200,87,42,0.15)' : 'rgba(250,246,240,0.04)',
+                  lineHeight: 1,
+                  transition: 'color 0.45s ease',
+                }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+
+                {/* Content */}
+                <div style={{ position: 'relative', zIndex: 2 }}>
+                  {/* English label */}
+                  <span style={{
+                    fontFamily: 'Noto Sans JP,sans-serif',
+                    fontSize: '.58rem',
+                    letterSpacing: '.2em',
+                    color: isHovered ? 'rgba(200,87,42,0.7)' : 'rgba(250,246,240,0.2)',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease',
+                    display: 'block',
+                    marginBottom: isFeatured ? '1.2rem' : '.9rem',
+                  }}>
+                    {SERVICES_EN[i]}
+                  </span>
+
+                  {/* Icon */}
+                  <div style={{
+                    marginBottom: isFeatured ? '1.5rem' : '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: isFeatured ? '3.5rem' : '3rem',
+                    height: isFeatured ? '3.5rem' : '3rem',
+                    background: isHovered ? 'rgba(200,87,42,0.12)' : 'rgba(200,87,42,0.05)',
+                    border: `1px solid ${isHovered ? 'rgba(200,87,42,0.3)' : 'rgba(200,87,42,0.1)'}`,
+                    borderRadius: '50%',
+                    transition: 'all 0.4s ease',
+                    transform: isHovered ? 'scale(1.08)' : 'scale(1)',
+                  }}>
+                    {SVC_SVGS[i]}
+                  </div>
+
+                  {/* Title */}
+                  <h3 style={{
+                    fontFamily: 'Noto Serif JP,serif',
+                    fontSize: isFeatured ? '1.1rem' : '.95rem',
+                    fontWeight: 500,
+                    color: isHovered ? '#FAF6F0' : 'rgba(250,246,240,0.85)',
+                    marginBottom: '.7rem',
+                    lineHeight: 1.45,
+                    transition: 'color 0.3s ease',
+                  }}>
+                    {svcTitles[i]}
+                  </h3>
+
+                  {/* Description */}
+                  <p style={{
+                    fontFamily: 'Noto Sans JP,sans-serif',
+                    fontSize: '.78rem',
+                    color: isHovered ? 'rgba(250,246,240,0.6)' : 'rgba(250,246,240,0.35)',
+                    lineHeight: 1.9,
+                    transition: 'color 0.3s ease',
+                    maxWidth: isFeatured ? '400px' : 'none',
+                  }}>
+                    {descs[i]}
+                  </p>
+
+                  {/* Arrow indicator on hover for featured cards */}
+                  {isFeatured && (
+                    <div style={{
+                      marginTop: '1.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '.5rem',
+                      opacity: isHovered ? 1 : 0,
+                      transform: isHovered ? 'translateX(0)' : 'translateX(-8px)',
+                      transition: 'all 0.4s ease',
+                    }}>
+                      <div style={{ width: '1.5rem', height: '1px', background: '#C8572A' }} />
+                      <ArrowRight size={13} style={{ color: '#C8572A' }} />
+                    </div>
+                  )}
+                </div>
+
+                {/* Subtle corner accent */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  right: 0,
+                  width: isHovered ? '60px' : '0px',
+                  height: isHovered ? '60px' : '0px',
+                  background: 'radial-gradient(circle at bottom right, rgba(200,87,42,0.1) 0%, transparent 70%)',
+                  transition: 'all 0.5s ease',
+                  pointerEvents: 'none',
+                }} />
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Bottom decorative line */}
+        <div className={`reveal ${inView ? 'in' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', marginTop: '4rem' }}>
+          <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(200,87,42,0.15))' }} />
+          <span style={{ fontFamily: 'EB Garamond,serif', fontSize: '.85rem', fontStyle: 'italic', color: 'rgba(200,87,42,0.35)', letterSpacing: '.06em', whiteSpace: 'nowrap' }}>
+            {"All-in-one support for your Japan journey"}
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, rgba(200,87,42,0.15), transparent)' }} />
         </div>
       </div>
     </section>
