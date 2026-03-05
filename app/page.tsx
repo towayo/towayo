@@ -19,7 +19,7 @@ const T = {
     heroCta1: '無料相談を申し込む',
     heroCta2: 'サービス詳細',
     stats: [
-      { num: '', unit: 'プラン', label: 'すべて込み' },
+      { num: 'プラン', unit: '', label: 'すべて込み' },
       { num: '1対1', unit: '専属制', label: '担当者固定' },
       { num: '韓・日', unit: 'バイリンガル', label: '在宅スタッフ' },
       { num: '最短', unit: '1週間', label: 'サービス開始' },
@@ -123,7 +123,7 @@ const T = {
     heroCta1: '무료 상담 신청',
     heroCta2: '서비스 상세',
     stats: [
-      { num: '', unit: '플랜', label: '모두 포함' },
+      { num: '플랜', unit: '', label: '모두 포함' },
       { num: '1:1', unit: '전담제', label: '담당자 고정' },
       { num: '한·일', unit: '바이링구얼', label: '재택 스태프' },
       { num: '최단', unit: '1주일', label: '서비스 시작' },
@@ -227,7 +227,7 @@ const T = {
     heroCta1: 'Book a Free Consultation',
     heroCta2: 'View Services',
     stats: [
-      { num: '', unit: 'Plan', label: 'All-inclusive' },
+      { num: 'Plan', unit: '', label: 'All-inclusive' },
       { num: '1:1', unit: 'Dedicated', label: 'Fixed contact' },
       { num: 'KO/JA', unit: 'Bilingual', label: 'Remote staff' },
       { num: 'From', unit: '1 week', label: 'To start' },
@@ -332,8 +332,26 @@ function useInView(threshold = 0.12) {
   return { ref, inView }
 }
 
-const SERVICES_ICONS = ['📬', '🗣️', '📅', '💴', '📝', '🤝', '🏢', '🌐']
 const SERVICES_EN = ['Mail Management', 'Bilingual Support', 'Schedule & Logistics', 'Expense Management', 'Document Creation', 'On-site Support', 'Virtual Office', 'Digital Marketing']
+
+const SVC_SVGS = [
+  // Mail
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>,
+  // Bilingual / speech
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>,
+  // Schedule / calendar
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>,
+  // Expense / coins
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10.5c0-1.1.9-2 2.5-2s2.5.9 2.5 2-.9 1.5-2.5 1.5-2.5.9-2.5 2 .9 2 2.5 2 2.5-.9 2.5-2"/></svg>,
+  // Document / file
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>,
+  // On-site / handshake
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><path d="m3 11 8-8 8 8"/><path d="M5 9v10a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1V9"/></svg>,
+  // Virtual office / building
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 22V12h6v10M9 7h.01M12 7h.01M15 7h.01M9 11h.01M15 11h.01"/></svg>,
+  // Digital / globe
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8572A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 0 1 0 18M12 3a14.5 14.5 0 0 0 0 18"/></svg>,
+]
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('ja')
@@ -494,10 +512,11 @@ export default function Home() {
             </div>
             <div className="afu d5" style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {t.stats.map((s, i) => (
-                <div key={i} style={{ borderLeft: '2px solid rgba(200,87,42,.28)', paddingLeft: '1rem' }}>
-                  {s.num && <div style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.6rem', fontWeight: 600, color: '#C8572A', lineHeight: 1 }}>{s.num}</div>}
-                  <div style={{ fontFamily: s.num ? 'Noto Sans JP,sans-serif' : 'Cormorant Garamond,serif', fontSize: s.num ? '.62rem' : '1.4rem', fontWeight: s.num ? 400 : 600, color: s.num ? '#9A7A5A' : '#C8572A', letterSpacing: '.08em', marginTop: '.1rem' }}>{s.unit}</div>
-                  <div style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.7rem', color: '#7A6A5A', marginTop: '.15rem' }}>{s.label}</div>
+                <div key={i} style={{ paddingLeft: '1.1rem', position: 'relative' }}>
+                  <div style={{ position: 'absolute', left: 0, top: '4px', bottom: '4px', width: '2px', background: 'linear-gradient(to bottom, #C8572A, rgba(200,87,42,0.15))' }} />
+                  <div style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '1.15rem', fontWeight: 500, color: '#C8572A', lineHeight: 1.2, letterSpacing: '0.02em' }}>{s.num}</div>
+                  <div style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.6rem', color: '#B09070', letterSpacing: '.08em', marginTop: '.2rem' }}>{s.unit}</div>
+                  <div style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.68rem', color: '#8A7A6A', marginTop: '.1rem' }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -615,11 +634,11 @@ function ServicesSection({ t }: { t: typeof T[keyof typeof T] }) {
       <div ref={ref} style={{ maxWidth: 1200, margin: '0 auto', padding: '0 2rem' }}>
         <div className={`reveal ${inView ? 'in' : ''}`}><SH tag={t.svcTag} title={t.svcTitle} sub={t.svcDesc} /></div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: '1.5px', background: '#D8CBBF' }}>
-          {SERVICES_ICONS.map((icon, i) => (
+          {SVC_SVGS.map((_icon, i) => (
             <div key={i} className={`svc reveal ${inView ? 'in' : ''}`}
               style={{ background: '#FAF6F0', padding: '2.2rem', position: 'relative', overflow: 'hidden', transitionDelay: `${i * .055}s` }}>
               <div style={{ position: 'absolute', top: '1.2rem', right: '1.4rem', fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.58rem', letterSpacing: '.15em', color: 'rgba(200,87,42,.45)', textTransform: 'uppercase' }}>{SERVICES_EN[i]}</div>
-              <div style={{ fontSize: '1.55rem', marginBottom: '1rem' }}>{icon}</div>
+              <div style={{ marginBottom: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '3rem', height: '3rem', border: '1px solid rgba(200,87,42,0.2)', borderRadius: '50%', background: 'rgba(200,87,42,0.04)' }}>{SVC_SVGS[i]}</div>
               <h3 style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.95rem', fontWeight: 500, color: '#1a1510', marginBottom: '.65rem', lineHeight: 1.4 }}>{svcTitles[i]}</h3>
               <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.78rem', color: '#7A6A5A', lineHeight: 1.85 }}>{descs[i]}</p>
             </div>
@@ -656,7 +675,7 @@ function SetupSection({ t }: { t: typeof T[keyof typeof T] }) {
             {t.setupItems.map(({ icon: Icon, title, desc }, i) => (
               <div key={i} className={`reveal ${inView ? 'in' : ''}`}
                 style={{ background: '#F5EDE3', padding: '1.8rem', border: '1px solid #E8DDD4', transitionDelay: `${i * .07}s` }}>
-                <div style={{ width: '2.4rem', height: '2.4rem', border: '1px solid rgba(200,87,42,.28)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                <div style={{ width: '2.6rem', height: '2.6rem', background: 'rgba(200,87,42,0.06)', border: '1px solid rgba(200,87,42,0.18)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
                   <Icon size={14} style={{ color: '#C8572A' }} />
                 </div>
                 <h3 style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.92rem', fontWeight: 500, color: '#1a1510', marginBottom: '.5rem' }}>{title}</h3>
@@ -710,7 +729,7 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '.55rem' }}>
               {t.planItems.map((item, i) => (
                 <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '.55rem' }}>
-                  <Check size={11} style={{ color: '#E8956A', marginTop: 3, flexShrink: 0 }} />
+                  <span style={{ flexShrink: 0, marginTop: '2px', width: '1.1rem', height: '1.1rem', borderRadius: '50%', background: 'rgba(200,87,42,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Check size={9} style={{ color: '#E8956A' }} /></span>
                   <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.78rem', color: 'rgba(255,255,255,.75)', lineHeight: 1.5 }}>{item}</span>
                 </li>
               ))}
@@ -751,8 +770,8 @@ function WhySection({ t }: { t: typeof T[keyof typeof T] }) {
             {t.whyItems.map(({ icon: Icon, title, desc }, i) => (
               <div key={i} className={`whyrow reveal ${inView ? 'in' : ''}`}
                 style={{ display: 'flex', gap: '1.5rem', padding: '1.8rem 0', borderBottom: i < t.whyItems.length - 1 ? '1px solid #EAE0D6' : 'none', transitionDelay: `${i * .07}s` }}>
-                <div style={{ flexShrink: 0, width: '2.4rem', height: '2.4rem', border: '1px solid rgba(200,87,42,.28)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '.1rem' }}>
-                  <Icon size={13} style={{ color: '#C8572A' }} />
+                <div style={{ flexShrink: 0, width: '2.6rem', height: '2.6rem', background: 'rgba(200,87,42,0.06)', border: '1px solid rgba(200,87,42,0.18)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '.1rem' }}>
+                  <Icon size={14} style={{ color: '#C8572A' }} />
                 </div>
                 <div>
                   <h3 style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.98rem', fontWeight: 500, color: '#1a1510', marginBottom: '.45rem' }}>{title}</h3>
@@ -785,7 +804,7 @@ function StepsSection({ t }: { t: typeof T[keyof typeof T] }) {
             <div key={i} className={`reveal ${inView ? 'in' : ''}`}
               style={{ padding: '2.5rem 2rem', borderRight: i < t.steps.length - 1 ? '1px solid rgba(200,87,42,.12)' : 'none', transitionDelay: `${i * .1}s` }}>
               <div style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '5.5rem', fontWeight: 300, color: 'rgba(200,87,42,.07)', lineHeight: 1, marginBottom: '-1.8rem', userSelect: 'none' }}>{s.num}</div>
-              <div style={{ width: 2, height: '2rem', background: 'rgba(200,87,42,.4)', marginBottom: '1rem' }} />
+              <div style={{ width: '1.5px', height: '2.2rem', background: 'linear-gradient(to bottom, #C8572A, rgba(200,87,42,0.2))', marginBottom: '1rem' }} />
               <h3 style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '1.02rem', fontWeight: 500, color: 'white', marginBottom: '.7rem' }}>{s.title}</h3>
               <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.78rem', color: 'rgba(255,255,255,.48)', lineHeight: 1.85 }}>{s.desc}</p>
             </div>
@@ -807,8 +826,8 @@ function VoicesSection({ t }: { t: typeof T[keyof typeof T] }) {
             <div key={i} className={`reveal ${inView ? 'in' : ''}`}
               style={{ background: '#F5EDE3', padding: '2.5rem', position: 'relative', transitionDelay: `${i * .1}s` }}>
               <div style={{ position: 'absolute', top: '1.4rem', left: '1.8rem', fontFamily: 'Cormorant Garamond,serif', fontSize: '5.5rem', color: 'rgba(200,87,42,.1)', lineHeight: 1, fontStyle: 'italic', userSelect: 'none', pointerEvents: 'none' }}>"</div>
-              <div style={{ display: 'flex', gap: '.25rem', marginBottom: '1rem' }}>
-                {[...Array(5)].map((_, j) => <Star key={j} size={11} fill="#C8572A" style={{ color: '#C8572A' }} />)}
+              <div style={{ display: 'flex', gap: '.3rem', marginBottom: '1rem' }}>
+                {[...Array(5)].map((_, j) => <Star key={j} size={12} fill="#D4763A" style={{ color: '#D4763A', opacity: 0.85 }} />)}
               </div>
               <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.87rem', color: '#5A4A3A', lineHeight: 1.95, marginBottom: '1.5rem', fontWeight: 300, position: 'relative', zIndex: 1 }}>{v.text}</p>
               <div style={{ borderTop: '1px solid #DDD0C4', paddingTop: '1rem' }}>
@@ -882,8 +901,8 @@ function ContactSection({ t }: { t: typeof T[keyof typeof T] }) {
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.88rem', color: 'rgba(255,255,255,.52)', lineHeight: 2, fontWeight: 300, marginBottom: '2.5rem' }}>{t.contactDesc}</p>
             {[{ icon: Mail, text: 'info@towayo.com', label: 'Email' }, { icon: MapPin, text: 'Tokyo, Japan', label: t.langCode === 'ko' ? '소재지' : t.langCode === 'en' ? 'Location' : '所在地' }].map(({ icon: Icon, text, label }, i) => (
               <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1.2rem' }}>
-                <div style={{ width: '2.2rem', height: '2.2rem', border: '1px solid rgba(200,87,42,.28)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Icon size={12} style={{ color: '#C8572A' }} />
+                <div style={{ width: '2.4rem', height: '2.4rem', background: 'rgba(200,87,42,0.06)', border: '1px solid rgba(200,87,42,0.18)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Icon size={13} style={{ color: '#C8572A' }} />
                 </div>
                 <div>
                   <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.6rem', letterSpacing: '.14em', color: 'rgba(255,255,255,.28)', marginBottom: '.2rem' }}>{label}</p>
