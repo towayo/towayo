@@ -70,7 +70,7 @@ const T = {
       { icon: Award, title: '定額・明確な料金', desc: '月額¥99,000（税抜）のみ。追加費用なし・入居契約不要。' },
       { icon: Globe, title: 'バイリンガル人材', desc: '日本在住の韓日バイリンガル女性スタッフ。日韓両文化を深く理解した対応が可能。' },
       { icon: TrendingUp, title: '進出準備から一貫対応', desc: '法人設立・口座開設などの準備段階から、日常のバックオフィス業務まで一貫してサポート。' },
-      { icon: Clock, title: 'すぐに始められる', desc: 'お問い合わせから最短1週間でサービス開始。LINEWORKSで担当者とすぐ連携。' },
+      { icon: Clock, title: 'すぐに始められる', desc: 'お問い合わせから最短1週間でサービス開始。LINE WORKSで担当者とすぐ連携。' },
     ],
     stepsTag: 'ご利用の流れ',
     stepsTitle: 'ご利用の流れ',
@@ -119,13 +119,13 @@ const T = {
     heroH1b: '일본 진출',
     heroH1c: '을, 함께.',
     heroSlogan: '"Support That Brings You Back."',
-    heroDesc: '법인 설립부터 일상 백오피스 업무까지——\n일본 거주 한일 바이링구얼이 전담으로,\n여러분 회사의 「일본 직원」이 됩니다.',
+    heroDesc: '법인 설립부터 일상 백오피스 업무까지——\n일본 거주 한일 능통 스태프가 전담으로,\n여러분 회사의 「일본 직원」이 됩니다.',
     heroCta1: '무료 상담 신청',
     heroCta2: '서비스 상세',
     stats: [
       { num: '플랜', unit: '', label: '모두 포함' },
       { num: '1:1', unit: '전담제', label: '담당자 고정' },
-      { num: '한·일', unit: '바이링구얼', label: '재택 스태프' },
+      { num: '한·일', unit: '한일 능통', label: '원격 근무 직원' },
       { num: '최단', unit: '1주일', label: '서비스 시작' },
     ],
     svcTag: 'Services',
@@ -154,10 +154,10 @@ const T = {
     planIncludes: '포함된 서비스 전체',
     planItems: [
       '우편물 수령・스캔・전달・내용 보고',
-      '한일 바이링구얼 고객 응대（메일・전화）',
+      '한국어・일본어 고객 응대（메일・전화）',
       '번역 대응（비즈니스 문서・계약서 등）',
       '스케줄 관리・약속 조정',
-      '출장・회의・전시회 예약 수배',
+      '출장・회의・전시회 예약 및 준비',
       '경비 정산 확인・월간 리포트',
       '자료・의사록・보고서 작성',
       '대면 동행（월 1회）',
@@ -172,7 +172,7 @@ const T = {
       { icon: Shield, title: '한국→일본에 특화', desc: '한국 기업이 일본 진출 시 직면하는 고유한 과제（언어・문화・법제도）를 깊이 이해합니다.' },
       { icon: Users, title: '전담 담당제', desc: '기업 1사에 1명이 전담 대응. 마치 자사 직원과 같은 지속적인 지원이 가능합니다.' },
       { icon: Award, title: '정액・명확한 요금', desc: '월정액 ¥99,000（세금 별도）만. 추가 비용 없음・입주 계약 불필요.' },
-      { icon: Globe, title: '바이링구얼 인재', desc: '일본 거주 한일 바이링구얼 여성 스태프. 양국 문화를 깊이 이해한 대응 가능.' },
+      { icon: Globe, title: '한일 능통 인재', desc: '일본 거주 한일 능통 여성 직원. 양국 문화를 깊이 이해한 대응 가능.' },
       { icon: TrendingUp, title: '진출 준비부터 일관 대응', desc: '법인 설립・계좌 개설 등 준비 단계부터 일상 백오피스 업무까지 일관 지원.' },
       { icon: Clock, title: '바로 시작 가능', desc: '문의 후 최단 1주일 만에 서비스 시작. LINE WORKS로 담당자와 즉시 연동.' },
     ],
@@ -181,14 +181,14 @@ const T = {
     steps: [
       { num: '01', title: '문의', desc: '폼 또는 이메일로 연락해 주세요.' },
       { num: '02', title: '온라인 상담', desc: '요구 사항을 파악하고 최적의 플랜을 제안합니다（약 30분）.' },
-      { num: '03', title: '담당자 배정', desc: '업무 내용에 맞는 전담 바이링구얼 스태프를 선정합니다.' },
+      { num: '03', title: '담당자 배정', desc: '업무 내용에 맞는 전담 한일 능통 스태프를 선정합니다.' },
       { num: '04', title: '서비스 시작', desc: 'LINE WORKS로 연동하며 업무 시작. 월간 리포트로 진행 상황 가시화.' },
     ],
     voiceTag: '고객의 목소리',
     voiceTitle: '고객의 목소리',
     voices: [
       { company: '한국계 IT 스타트업', text: '법인 설립부터 계좌 개설까지 꼼꼼하게 지원해 주셨습니다. 일본어를 전혀 모르는 상태에서도 안심하고 절차를 진행할 수 있었습니다.' },
-      { company: '한국계 코스메 브랜드', text: '전시회 수배부터 거래처와의 메일 응대까지, 마치 일본에 직원이 있는 것 같은 안심감이 있습니다. 전담 담당제라 세밀한 뉘앙스도 잘 전달됩니다.' },
+      { company: '한국계 코스메 브랜드', text: '전시회 준비부터 거래처와의 메일 응대까지, 마치 일본에 직원이 있는 것 같은 안심감이 있습니다. 전담 담당제라 세밀한 뉘앙스도 잘 전달됩니다.' },
       { company: '한국계 식품 제조사', text: '상담 동행 통역이 특히 도움이 됩니다. 월정액이라 예산 관리도 쉽고, 스타트업에게 매우 고마운 서비스입니다.' },
     ],
     aboutTag: 'About',
@@ -196,7 +196,7 @@ const T = {
     aboutName: '"Support That Brings You Back."',
     aboutDesc1: 'TOWAYO（또 와요・도와요）는 한국어로 「또 와요」「도와요」라는 의미를 가집니다.',
     aboutDesc2: '창립 멤버는 한국 기업의 일본 진출 지원 기관에서 오랜 실무 경험을 보유하고 있으며, 현장에서 본 과제에 정확한 지원을 제공합니다.',
-    aboutDesc3: '스태프는 전원 일본 거주 한일 바이링구얼 여성. 육아 후 재취업 희망자를 적극 채용하여 고용 창출에도 기여하고 있습니다.',
+    aboutDesc3: '직원은 전원 일본 거주 한일 능통 여성. 육아 후 재취업 희망자를 적극 채용하여 고용 창출에도 기여하고 있습니다.',
     contactTag: 'Contact',
     contactTitle: '문의・\n무료 상담',
     contactDesc: '첫 상담은 무료입니다. 법인 설립 상담부터 월정액 서비스 견적까지, 편하게 연락해 주세요. 2영업일 이내에 답변드립니다.',
@@ -258,13 +258,13 @@ const T = {
     planIncludes: 'Everything Included',
     planItems: [
       'Mail & postal management (scan, forward, report)',
-      'Bilingual customer support (email & phone)',
+      'Korean-Japanese customer support (email & phone)',
       'Translation (business documents, contracts, etc.)',
       'Schedule management & appointment coordination',
       'Travel, meeting & exhibition arrangements',
       'Expense processing & monthly reports',
       'Document, minutes & report preparation',
-      'In-person accompaniment (once/month)',
+      'On-site support (once/month)',
       'LINE WORKS integration',
       'Dedicated fixed contact person',
     ],
@@ -293,7 +293,7 @@ const T = {
     voices: [
       { company: 'Korean IT Startup', text: 'They supported us through the entire incorporation process, from filing paperwork to opening our bank account. Even with no Japanese, we felt completely at ease.' },
       { company: 'Korean Cosmetics Brand', text: 'From trade show logistics to email correspondence with partners — it feels like having a real employee in Japan. The dedicated contact person makes all the difference.' },
-      { company: 'Korean Food Manufacturer', text: 'The in-person accompaniment for business meetings is invaluable. The flat fee makes budgeting easy — a great service for startups.' },
+      { company: 'Korean Food Manufacturer', text: 'The on-site support for business meetings is invaluable. The flat fee makes budgeting easy — a great service for startups.' },
     ],
     aboutTag: 'About',
     aboutTitle: '"Come Back Again.\nWe\'ll Help You."',
@@ -481,8 +481,8 @@ export default function Home() {
         {/* Tokyo photo - right side */}
         <div style={{
           position: 'absolute', right: 0, top: 0, width: '48%', height: '100%',
-          backgroundImage: 'url(https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1400&auto=format&fit=crop&q=85)',
-          backgroundSize: 'cover', backgroundPosition: 'top center',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?w=1400&auto=format&fit=crop&q=85)',
+          backgroundSize: 'cover', backgroundPosition: 'center',
         }}>
           {/* Fade left edge into cream */}
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.5) 30%, transparent 70%)' }} />
@@ -629,7 +629,7 @@ function ServicesSection({ t }: { t: typeof T[keyof typeof T] }) {
   const svcTitles = [t.planItems[0], t.planItems[1], t.planItems[2], t.planItems[3], t.planItems[4], t.planItems[5], t.planItems[6] ?? '', t.planItems[7] ?? '']
   const svcDescs: Record<string, string[]> = {
     ja: ['郵便物の受領・スキャン・転送・内容報告。日本語の複雑な書類も丁寧に処理します。', '日韓バイリンガルによるメール・電話対応。契約書・プレスリリースなどの翻訳。', 'アポイント調整、出張・会議・展示会の予約手配を一括管理。', '経費精算チェック、データ入力・整理、月次・週次レポート作成。', '議事録・文字起こし、報告書・書状データ作成、市場リサーチ対応。', '商談・打ち合わせへの通訳同行（月1回）。展示会出展サポート。', '法人住所の提供、銀行口座開設サポート。物理的拠点なしで運営可能。', 'ホームページ構築、SNS運営代行、定期プレスリリース配信。'],
-    ko: ['우편물 수령・스캔・전달・내용 보고. 복잡한 일본어 서류도 꼼꼼히 처리.', '한일 바이링구얼 메일・전화 응대. 계약서・프레스 릴리스 등 번역.', '약속 조정, 출장・회의・전시회 예약 수배를 일괄 관리.', '경비 정산 확인, 데이터 입력・정리, 월간・주간 리포트 작성.', '의사록・받아쓰기, 보고서 작성, 시장 리서치 대응.', '상담・미팅 통역 동행（월 1회）. 전시회 출전 지원.', '법인 주소 제공, 은행 계좌 개설 지원. 물리적 거점 없이 운영 가능.', '홈페이지 구축, SNS 운영 대행, 정기 프레스 릴리스 배포.'],
+    ko: ['우편물 수령・스캔・전달・내용 보고. 복잡한 일본어 서류도 꼼꼼히 처리.', '한국어・일본어 메일・전화 응대. 계약서・프레스 릴리스 등 번역.', '약속 조정, 출장・회의・전시회 예약 및 준비를 일괄 관리.', '경비 정산 확인, 데이터 입력・정리, 월간・주간 리포트 작성.', '의사록・받아쓰기, 보고서 작성, 시장 리서치 대응.', '상담・미팅 통역 동행（월 1회）. 전시회 출전 지원.', '법인 주소 제공, 은행 계좌 개설 지원. 물리적 거점 없이 운영 가능.', '홈페이지 구축, SNS 운영 대행, 정기 프레스 릴리스 배포.'],
     en: ['Mail receipt, scanning, forwarding, and reporting. We handle complex Japanese documents carefully.', 'Korean-Japanese bilingual email and phone support. Translation of contracts, press releases, and more.', 'Appointment coordination, travel, meeting, and exhibition arrangements — all managed for you.', 'Expense processing, data entry, and monthly/weekly report creation.', 'Minutes, transcription, report writing, and market research support.', 'In-person interpretation for meetings (once/month). Trade show support.', 'Corporate address provision and bank account opening support. Operate without a physical office.', 'Website building, SNS management, regular press release distribution.'],
   }
   const langKey = t.langCode === 'ko' ? 'ko' : t.langCode === 'en' ? 'en' : 'ja'
