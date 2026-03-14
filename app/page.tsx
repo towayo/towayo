@@ -13,7 +13,8 @@ const T = {
     heroEyebrow: 'Korea × Japan Business Bridge',
     heroH1a: '韓国企業の',
     heroH1b: '日本進出',
-    heroH1c: 'を、共に。',
+    heroH1bSuffix: 'を',
+    heroH1c: '共に。',
     heroSlogan: '"Support That Brings You Back."',
     heroDesc: '法人設立から日常のバックオフィス業務まで——\n日本在住の韓日バイリンガルが専属担当として、\nあなたの会社の「日本の社員」になります。',
     heroCta1: '無料相談を申し込む',
@@ -145,7 +146,8 @@ const T = {
     heroEyebrow: 'Korea × Japan Business Bridge',
     heroH1a: '한국 기업의',
     heroH1b: '일본 진출',
-    heroH1c: '을, 함께.',
+    heroH1bSuffix: '을',
+    heroH1c: '함께.',
     heroSlogan: '"Support That Brings You Back."',
     heroDesc: '법인 설립부터 일상 백오피스 업무까지——\n일본 거주 한일 능통 스태프가 전담으로,\n여러분 회사의 「일본 직원」이 됩니다.',
     heroCta1: '무료 상담 신청',
@@ -277,7 +279,8 @@ const T = {
     heroEyebrow: 'Korea × Japan Business Bridge',
     heroH1a: 'Your Korean Business,',
     heroH1b: 'Expanding to Japan',
-    heroH1c: '— Together.',
+    heroH1bSuffix: '—',
+    heroH1c: 'Together.',
     heroSlogan: '"Support That Brings You Back."',
     heroDesc: 'From company incorporation to daily back-office operations——\nour dedicated Japanese-Korean bilingual staff\nbecomes your company\'s "Japan employee".',
     heroCta1: 'Book a Free Consultation',
@@ -585,11 +588,12 @@ export default function Home() {
               <div style={{ width: '2rem', height: 1, background: '#C8572A' }} />
               <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.68rem', letterSpacing: '.28em', color: '#C8572A', textTransform: 'uppercase' }}>{t.heroEyebrow}</span>
             </div>
-            <h1 className="afu d1" style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: 'clamp(3rem,7vw,5.8rem)', fontWeight: 300, lineHeight: 1.05, color: '#1a1510', marginBottom: '.2rem' }}>{t.heroH1a}</h1>
-            <h1 className="afu d2" style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: 'clamp(3rem,7vw,5.8rem)', fontWeight: 300, lineHeight: 1.05, marginBottom: '.2rem' }}>
-              <em style={{ fontStyle: 'italic', color: '#C8572A', fontWeight: 400 }}>{t.heroH1b}</em>
+            <h1 className="afu d1" style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '4rem', fontWeight: 300, lineHeight: 1.1, color: '#1a1510', marginBottom: '.1rem', letterSpacing: '0.01em' }}>{t.heroH1a}</h1>
+            <h1 className="afu d2" style={{ fontFamily: 'Cormorant Garamond,serif', lineHeight: 1.0, marginBottom: '.1rem', display: 'flex', alignItems: 'baseline', gap: '.1em' }}>
+              <em style={{ fontStyle: 'italic', color: '#C8572A', fontSize: '7rem', fontWeight: 400 }}>{t.heroH1b}</em>
+              <em style={{ fontStyle: 'italic', color: '#C8572A', fontSize: '4rem', fontWeight: 400 }}>{(t as any).heroH1bSuffix}</em>
             </h1>
-            <h1 className="afu d3" style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: 'clamp(3rem,7vw,5.8rem)', fontWeight: 300, lineHeight: 1.05, color: '#1a1510', marginBottom: '2rem' }}>{t.heroH1c}</h1>
+            <h1 className="afu d3" style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '4rem', fontWeight: 300, lineHeight: 1.1, color: '#1a1510', marginBottom: '2.2rem', letterSpacing: '0.01em' }}>{t.heroH1c}</h1>
             <p className="afu d3" style={{ fontFamily: 'EB Garamond,serif', fontSize: '1.1rem', fontStyle: 'italic', color: '#9A7A5A', letterSpacing: '.04em', marginBottom: '1.5rem' }}>{t.heroSlogan}</p>
             <p className="afu d4" style={{ fontFamily: 'Noto Serif JP,serif', fontSize: 'clamp(.88rem,1.5vw,1.02rem)', lineHeight: 2.1, color: '#5a4a3a', maxWidth: 530, marginBottom: '2rem', fontWeight: 300, whiteSpace: 'pre-line' }}>{t.heroDesc}</p>
             {/* Trust badges */}
