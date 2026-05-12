@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
   const { error } = await resend.emails.send({
     from: 'onboarding@resend.dev',
-    to: 'towayo.official@gmail.com',
+    to: 'info@towayo.com',
     reply_to: email,
     subject,
     html,

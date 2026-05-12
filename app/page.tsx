@@ -577,7 +577,7 @@ export default function Home() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: 68 }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,#FAF6F0 0%,#F5EDE3 45%,#FAF6F0 100%)' }} />
-        <div style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '100%', backgroundImage: 'url(https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?w=1400&auto=format&fit=crop&q=85)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div style={{ position: 'absolute', right: 0, top: 0, width: '48%', height: '100%', background: 'transparent' }}>
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.5) 30%, transparent 70%)' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(200,87,42,0.06)' }} />
         </div>
