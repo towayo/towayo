@@ -44,10 +44,10 @@ const T = {
     pricingTitle: 'シンプルな\nワンプラン',
     pricingDesc: 'すべてのサービスが含まれた月額定額制。複雑な料金体系は一切ありません。',
     initialFee: '初期費用',
-    initialPrice: '¥1,000,000〜',
+    initialPrice: '¥1,500,000〜',
     initialNote: '法人設立・事務所探し・口座開設などの進出準備費用。内容により異なります。',
     monthlyFee: '月額費用',
-    monthlyPrice: '¥99,000',
+    monthlyPrice: '¥199,000',
     monthlyNote: '税抜・月額定額制',
     planIncludes: 'すべて含まれるサービス',
     planItems: [
@@ -77,7 +77,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: '韓国→日本に特化', desc: '韓国企業が日本進出する際の固有の課題（言語・文化・法制度）を深く理解しています。' },
       { icon: Users, title: '専属担当制', desc: '企業1社に対して1名が専属対応。まるで自社社員のような継続的サポートが可能です。' },
-      { icon: Award, title: '定額・明確な料金', desc: '月額¥99,000（税抜）のみ。追加費用なし・入居契約不要。' },
+      { icon: Award, title: '定額・明確な料金', desc: '月額¥199,000（税抜）のみ。追加費用なし・入居契約不要。' },
       { icon: Globe, title: 'バイリンガル人材', desc: '日本在住の韓日バイリンガル女性スタッフ。日韓両文化を深く理解した対応が可能。' },
       { icon: TrendingUp, title: '進出準備から一貫対応', desc: '法人設立・口座開設などの準備段階から、日常のバックオフィス業務まで一貫してサポート。' },
       { icon: Clock, title: 'すぐに始められる', desc: 'お問い合わせから最短1週間でサービス開始。LINE WORKSで担当者とすぐ連携。' },
@@ -102,7 +102,7 @@ const T = {
     faqs: [
       { q: '契約期間はありますか？', a: '最低契約期間はございません。月単位でご契約いただけます。ただし、業務の引き継ぎ等のため、解約の場合は1ヶ月前のご連絡をお願いしています。' },
       { q: '途中解約はできますか？', a: 'はい、可能です。1ヶ月前にご連絡いただければ、いつでも解約いただけます。違約金等は一切発生しません。' },
-      { q: '初期費用の目安を教えてください。', a: '初期費用は法人設立・事務所探し・口座開設などの内容によって異なります。概ね¥1,000,000〜を目安としてください。詳しくは無料相談にてお見積りいたします。' },
+      { q: '初期費用の目安を教えてください。', a: '初期費用は法人設立・事務所探し・口座開設などの内容によって異なります。概ね¥1,500,000〜を目安としてください。詳しくは無料相談にてお見積りいたします。' },
       { q: 'サービス開始まで何日かかりますか？', a: 'ご契約から最短1週間でサービスを開始できます。担当者のアサインとLINE WORKSの設定完了後、すぐに業務を開始します。' },
       { q: '日本語ができなくても大丈夫ですか？', a: 'もちろんです。担当スタッフは韓日バイリンガルです。韓国語でのコミュニケーションが可能ですので、日本語は一切不要です。' },
       { q: 'どのような業種の企業が利用できますか？', a: 'IT・SaaS、コスメ・ビューティー、食品・製造業、EC・小売など、業種を問わずご利用いただけます。日本進出を検討中または進出済みの韓国企業であればどなたでも対応可能です。' },
@@ -177,10 +177,10 @@ const T = {
     pricingTitle: '심플한\n원 플랜',
     pricingDesc: '모든 서비스가 포함된 월정액제. 복잡한 요금 체계는 일절 없습니다.',
     initialFee: '초기 비용',
-    initialPrice: '¥1,000,000~',
+    initialPrice: '¥1,500,000~',
     initialNote: '법인 설립・사무소 탐색・계좌 개설 등 진출 준비 비용. 내용에 따라 다릅니다.',
     monthlyFee: '월정액',
-    monthlyPrice: '¥99,000',
+    monthlyPrice: '¥199,000',
     monthlyNote: '세금 별도・월정액제',
     planIncludes: '포함된 서비스 전체',
     planItems: [
@@ -210,7 +210,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: '한국→일본에 특화', desc: '한국 기업이 일본 진출 시 직면하는 고유한 과제（언어・문화・법제도）를 깊이 이해합니다.' },
       { icon: Users, title: '전담 담당제', desc: '기업 1사에 1명이 전담 대응. 마치 자사 직원과 같은 지속적인 지원이 가능합니다.' },
-      { icon: Award, title: '정액・명확한 요금', desc: '월정액 ¥99,000（세금 별도）만. 추가 비용 없음・입주 계약 불필요.' },
+      { icon: Award, title: '정액・명확한 요금', desc: '월정액 ¥199,000（세금 별도）만. 추가 비용 없음・입주 계약 불필요.' },
       { icon: Globe, title: '한일 능통 인재', desc: '일본 거주 한일 능통 여성 직원. 양국 문화를 깊이 이해한 대응 가능.' },
       { icon: TrendingUp, title: '진출 준비부터 일관 대응', desc: '법인 설립・계좌 개설 등 준비 단계부터 일상 백오피스 업무까지 일관 지원.' },
       { icon: Clock, title: '바로 시작 가능', desc: '문의 후 최단 1주일 만에 서비스 시작. LINE WORKS로 담당자와 즉시 연동.' },
@@ -235,7 +235,7 @@ const T = {
     faqs: [
       { q: '계약 기간이 있나요?', a: '최소 계약 기간은 없습니다. 월 단위로 계약하실 수 있습니다. 단, 업무 인수인계 등을 위해 해지 시 1개월 전 사전 통보를 부탁드립니다.' },
       { q: '중도 해지는 가능한가요?', a: '네, 가능합니다. 1개월 전에 연락주시면 언제든지 해지하실 수 있습니다. 위약금 등은 일절 발생하지 않습니다.' },
-      { q: '초기 비용의 기준을 알려주세요.', a: '초기 비용은 법인 설립・사무소 탐색・계좌 개설 등 내용에 따라 달라집니다. 대략 ¥1,000,000~ 을 기준으로 해주세요. 자세한 사항은 무료 상담에서 견적을 드립니다.' },
+      { q: '초기 비용의 기준을 알려주세요.', a: '초기 비용은 법인 설립・사무소 탐색・계좌 개설 등 내용에 따라 달라집니다. 대략 ¥1,500,000~ 을 기준으로 해주세요. 자세한 사항은 무료 상담에서 견적을 드립니다.' },
       { q: '서비스 시작까지 얼마나 걸리나요?', a: '계약 후 최단 1주일 만에 서비스를 시작할 수 있습니다. 담당자 배정과 LINE WORKS 설정 완료 후 바로 업무를 시작합니다.' },
       { q: '일본어를 못해도 괜찮나요?', a: '물론입니다. 담당 스태프는 한일 양국어에 능통합니다. 한국어로 소통이 가능하므로 일본어는 전혀 필요하지 않습니다.' },
       { q: '어떤 업종의 기업이 이용할 수 있나요?', a: 'IT・SaaS, 코스메・뷰티, 식품・제조업, EC・소매업 등 업종에 관계없이 이용하실 수 있습니다. 일본 진출을 검토 중이거나 이미 진출하신 한국 기업이라면 누구든지 대응 가능합니다.' },
@@ -310,10 +310,10 @@ const T = {
     pricingTitle: 'Simple.\nOne Plan.',
     pricingDesc: 'A flat monthly fee with everything included. No complex tiers, no hidden costs.',
     initialFee: 'Initial Fee',
-    initialPrice: '¥1,000,000~',
+    initialPrice: '¥1,500,000~',
     initialNote: 'Covers company setup, office search, bank account opening, and related preparation. Varies by scope.',
     monthlyFee: 'Monthly Fee',
-    monthlyPrice: '¥99,000',
+    monthlyPrice: '¥199,000',
     monthlyNote: 'Excl. tax · Flat monthly rate',
     planIncludes: 'Everything Included',
     planItems: [
@@ -343,7 +343,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: 'Specialized in Korea→Japan', desc: 'We deeply understand the unique challenges Korean companies face entering Japan — language, culture, and legal systems.' },
       { icon: Users, title: 'Dedicated Contact Person', desc: 'One dedicated staff member per company, no rotation — building a working relationship as close as an in-house employee.' },
-      { icon: Award, title: 'Flat & Transparent Pricing', desc: '¥99,000/month (excl. tax). No hidden fees, no tenancy required.' },
+      { icon: Award, title: 'Flat & Transparent Pricing', desc: '¥199,000/month (excl. tax). No hidden fees, no tenancy required.' },
       { icon: Globe, title: 'Bilingual Professionals', desc: 'Japan-based Korean-Japanese bilingual women, deeply familiar with both cultures.' },
       { icon: TrendingUp, title: 'End-to-End Support', desc: 'From incorporation and bank accounts to daily back-office work — we stay with you throughout your Japan journey.' },
       { icon: Clock, title: 'Start in as Little as 1 Week', desc: 'Reach out today and be operational within a week. Coordinate instantly via LINE WORKS.' },
@@ -368,7 +368,7 @@ const T = {
     faqs: [
       { q: 'Is there a minimum contract period?', a: 'No minimum contract period. You can subscribe on a monthly basis. We simply ask for 1 month\'s notice if you wish to cancel, to allow for proper handover.' },
       { q: 'Can I cancel anytime?', a: 'Yes. With 1 month\'s notice, you can cancel at any time. There are no cancellation fees.' },
-      { q: 'What is the typical initial fee?', a: 'Initial fees vary depending on the scope of services — company incorporation, office search, bank account opening, etc. Use ¥1,000,000~ as a rough guide. We\'ll provide a detailed estimate in your free consultation.' },
+      { q: 'What is the typical initial fee?', a: 'Initial fees vary depending on the scope of services — company incorporation, office search, bank account opening, etc. Use ¥1,500,000~ as a rough guide. We\'ll provide a detailed estimate in your free consultation.' },
       { q: 'How long until service begins?', a: 'Service can begin as quickly as 1 week after signing. Once your dedicated staff member is assigned and LINE WORKS is set up, we\'re ready to go.' },
       { q: 'Is Japanese language required?', a: 'Not at all. Our staff are fully bilingual in Korean and Japanese. All communication can be conducted in Korean.' },
       { q: 'What industries do you support?', a: 'We support companies across all industries — IT/SaaS, cosmetics, food manufacturing, e-commerce, and more. Any Korean company planning or already operating in Japan is welcome.' },
