@@ -624,7 +624,6 @@ export default function Home() {
       </section>
 
       {/* PARTNER LOGOS */}
-      <PartnerLogos lang={lang} />
 
       {/* MARQUEE */}
       <div style={{ background: '#1a1510', padding: '.85rem 0', overflow: 'hidden', borderTop: '1px solid rgba(200,87,42,.18)', borderBottom: '1px solid rgba(200,87,42,.18)' }}>
