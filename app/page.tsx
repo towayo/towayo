@@ -840,10 +840,10 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }} className="grid2">
           <div className={`reveal ${inView ? 'in' : ''}`} style={{ border: '1px solid rgba(200,87,42,.2)', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,transparent,rgba(200,87,42,.4),transparent)' }} />
-            {/* 初期プラン 小さく + （業界最安水準）大きく */}
-            <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', marginBottom: '.4rem', letterSpacing: '.04em' }}>{t.initialFee}</p>
-            <div style={{ marginBottom: '1.2rem' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.8rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.initialPrice}）</span>
+            {/* 初期プラン + （業界最安水準）横並び */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1.2rem', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', lineHeight: 1 }}>{t.initialFee}</span>
+              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.5rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.initialPrice}）</span>
             </div>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.2rem' }} />
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.83rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.85 }}>{t.initialNote}</p>
@@ -854,10 +854,10 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
           <div className={`plncard reveal ${inView ? 'in' : ''}`}
             style={{ border: '1px solid rgba(200,87,42,.4)', padding: '2.5rem', position: 'relative', overflow: 'hidden', transitionDelay: '.1s', background: 'rgba(200,87,42,.06)' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#C8572A' }} />
-            {/* 月額プラン 小さく + （シンプル定額制）大きく */}
-            <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', marginBottom: '.4rem', letterSpacing: '.04em' }}>{t.monthlyFee}</p>
-            <div style={{ marginBottom: '.3rem' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.8rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.monthlyPrice}）</span>
+            {/* 月額プラン + （シンプル定額制）横並び */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '.3rem', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', lineHeight: 1 }}>{t.monthlyFee}</span>
+              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.5rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.monthlyPrice}）</span>
             </div>
             <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.7rem', color: 'rgba(255,255,255,.4)', marginBottom: '1.5rem' }}>{t.monthlyNote}</p>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.5rem' }} />
