@@ -840,9 +840,10 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }} className="grid2">
           <div className={`reveal ${inView ? 'in' : ''}`} style={{ border: '1px solid rgba(200,87,42,.2)', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,transparent,rgba(200,87,42,.4),transparent)' }} />
-            <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.66rem', letterSpacing: '.2em', color: 'rgba(255,255,255,.4)', marginBottom: '.5rem', textTransform: 'uppercase' }}>{t.initialFee}</p>
-            <div style={{ marginBottom: '1.2rem' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '3rem', fontWeight: 500, color: 'rgba(255,255,255,.85)', lineHeight: 1 }}>{t.initialPrice}</span>
+            {/* 初期費用 大きく + 業界最安水準 小さく横並び */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1.2rem' }}>
+              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '3rem', fontWeight: 500, color: 'rgba(255,255,255,.85)', lineHeight: 1 }}>{t.initialFee}</span>
+              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.72rem', color: '#E8956A', letterSpacing: '.06em', whiteSpace: 'nowrap' }}>{t.initialPrice}</span>
             </div>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.2rem' }} />
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.83rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.85 }}>{t.initialNote}</p>
@@ -853,12 +854,10 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
           <div className={`plncard reveal ${inView ? 'in' : ''}`}
             style={{ border: '1px solid rgba(200,87,42,.4)', padding: '2.5rem', position: 'relative', overflow: 'hidden', transitionDelay: '.1s', background: 'rgba(200,87,42,.06)' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#C8572A' }} />
-            <div style={{ position: 'absolute', top: '1.2rem', right: '1.2rem', background: '#C8572A', color: 'white', padding: '.2rem .8rem', fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.6rem', letterSpacing: '.1em', borderRadius: '1px' }}>
-              {t.langCode === 'ko' ? '모두 포함' : t.langCode === 'en' ? 'Best Value' : '業界最安水準'}
-            </div>
-            <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.66rem', letterSpacing: '.2em', color: 'rgba(255,255,255,.5)', marginBottom: '.5rem', textTransform: 'uppercase' }}>{t.monthlyFee}</p>
-            <div style={{ marginBottom: '.3rem' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '3.5rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>{t.monthlyPrice}</span>
+            {/* 月額費用 大きく + シンプル定額制 小さく横並び（業界最安水準バッジなし） */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '.3rem' }}>
+              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '3rem', fontWeight: 500, color: 'rgba(255,255,255,.85)', lineHeight: 1 }}>{t.monthlyFee}</span>
+              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.72rem', color: '#E8956A', letterSpacing: '.06em', whiteSpace: 'nowrap' }}>{t.monthlyPrice}</span>
             </div>
             <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.7rem', color: 'rgba(255,255,255,.4)', marginBottom: '1.5rem' }}>{t.monthlyNote}</p>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.5rem' }} />
