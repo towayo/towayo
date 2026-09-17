@@ -1148,7 +1148,7 @@ function ContactSection({ t }: { t: typeof T[keyof typeof T] }) {
             </div>
             <h2 style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: 'clamp(2.2rem,4vw,3.4rem)', fontWeight: 400, color: 'white', marginBottom: '1.5rem', lineHeight: 1.1, whiteSpace: 'pre-line' }}>{t.contactTitle}</h2>
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.88rem', color: 'rgba(255,255,255,.52)', lineHeight: 2, fontWeight: 300, marginBottom: '2.5rem' }}>{t.contactDesc}</p>
-            {[{ icon: Mail, text: 'info@towayo.com', label: 'Email' }, { icon: MapPin, text: 'Tokyo, Japan', label: t.langCode === 'ko' ? '소재지' : t.langCode === 'en' ? 'Location' : '所在地' }].map(({ icon: Icon, text, label }, i) => (
+            {[{ icon: Building2, text: t.langCode === 'ko' ? '주식회사 TOWAYO' : t.langCode === 'en' ? 'TOWAYO Inc.' : '株式会社 TOWAYO', label: t.langCode === 'ko' ? '회사명' : t.langCode === 'en' ? 'Company' : '会社名' }, { icon: Mail, text: 'info@towayo.com', label: 'Email' }, { icon: MapPin, text: 'Tokyo, Japan', label: t.langCode === 'ko' ? '소재지' : t.langCode === 'en' ? 'Location' : '所在地' }].map(({ icon: Icon, text, label }, i) => (
               <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1.2rem' }}>
                 <div style={{ width: '2.4rem', height: '2.4rem', background: 'rgba(200,87,42,0.06)', border: '1px solid rgba(200,87,42,0.18)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon size={13} style={{ color: '#C8572A' }} />
