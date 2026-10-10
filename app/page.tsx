@@ -43,10 +43,12 @@ const T = {
     pricingTitle: 'シンプルな\n料金体系',
     pricingDesc: 'シンプル・明確な料金体系。オプションは事前にご案内し、追加費用は発生しません。',
     initialFee: '初期プラン',
-    initialPrice: '業界最安水準',
+    initialAmount: '¥900,000',
+    initialUnit: '〜（税抜）',
     initialNote: '法人設立から銀行口座開設・資本金送金まですべて込みのワンパッケージ。詳しくはご相談ください。',
     monthlyFee: '月額プラン',
-    monthlyPrice: 'シンプル定額制',
+    monthlyAmount: '¥90,000',
+    monthlyUnit: '/ 月（税抜）',
     monthlyNote: '複雑な料金体系は一切なし。必要なオプションは事前にご案内。',
     planIncludes: '月額に含まれるサービス',
     planItems: [
@@ -74,7 +76,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: '韓国→日本に特化', desc: '韓国企業が日本進出する際の固有の課題（言語・文化・法制度）を深く理解しています。' },
       { icon: Users, title: '専属担当制', desc: '企業1社に対して1名が専属対応。まるで自社社員のような継続的サポートが可能です。' },
-      { icon: Award, title: 'シンプル・明確な料金', desc: '業界最安水準の定額制。オプションは事前にご案内し、追加費用は発生しません。' },
+      { icon: Award, title: 'シンプル・明確な料金', desc: '初期費用90万円〜、月額9万円の明確な定額制。オプションは事前にご案内し、追加費用は発生しません。' },
       { icon: Globe, title: 'バイリンガルスタッフ', desc: '日本在住の韓日バイリンガルスタッフ。日韓両文化を深く理解した対応が可能。' },
       { icon: TrendingUp, title: '進出準備から一貫対応', desc: '法人設立・口座開設などの準備段階から、日常のバックオフィス業務まで一貫してサポート。' },
       { icon: Clock, title: 'すぐに始められる', desc: 'お問い合わせから最短1週間でサービス開始。LINE WORKSで担当者とすぐ連携。' },
@@ -99,7 +101,7 @@ const T = {
     faqs: [
       { q: '契約期間はありますか？', a: '最低契約期間はございません。月単位でご契約いただけます。ただし、業務の引き継ぎ等のため、解約の場合は1ヶ月前のご連絡をお願いしています。' },
       { q: '途中解約はできますか？', a: 'はい、可能です。1ヶ月前にご連絡いただければ、いつでも解約いただけます。違約金等は一切発生しません。' },
-      { q: '費用はどのくらいですか？', a: '初期費用・月額ともに業界最安水準を目指しています。詳しくは無料相談にてご案内します。' },
+      { q: '費用はどのくらいですか？', a: '初期費用は90万円〜、月額は9万円（いずれも税抜）です。初期費用は設立内容により異なりますので、詳しくは無料相談にてご案内します。' },
       { q: 'サービス開始まで何日かかりますか？', a: 'ご契約から最短1週間でサービスを開始できます。担当者のアサインとLINE WORKSの設定完了後、すぐに業務を開始します。' },
       { q: '日本語ができなくても大丈夫ですか？', a: 'もちろんです。担当スタッフは韓日バイリンガルです。韓国語でのコミュニケーションが可能ですので、日本語は一切不要です。' },
       { q: 'どのような業種の企業が利用できますか？', a: 'IT・SaaS、コスメ・ビューティー、食品・製造業、EC・小売など、業種を問わずご利用いただけます。日本進出を検討中または進出済みの韓国企業であればどなたでも対応可能です。' },
@@ -173,10 +175,12 @@ const T = {
     pricingTitle: '심플한\n요금 체계',
     pricingDesc: '심플하고 명확한 요금 체계. 옵션은 사전에 안내드리며, 추가 비용은 발생하지 않습니다.',
     initialFee: '초기 플랜',
-    initialPrice: '업계 최저 수준',
+    initialAmount: '¥900,000',
+    initialUnit: '～ (부가세 별도)',
     initialNote: '법인 설립부터 은행 계좌 개설・자본금 송금까지 모두 포함된 원 패키지. 자세한 사항은 상담해 주세요.',
     monthlyFee: '월정액 플랜',
-    monthlyPrice: '심플 정액제',
+    monthlyAmount: '¥90,000',
+    monthlyUnit: '/ 월 (부가세 별도)',
     monthlyNote: '복잡한 요금 체계 일절 없음. 필요한 옵션은 사전에 안내.',
     planIncludes: '월정액에 포함되는 서비스',
     planItems: [
@@ -204,7 +208,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: '한국→일본에 특화', desc: '한국 기업이 일본 진출 시 직면하는 고유한 과제（언어・문화・법제도）를 깊이 이해합니다.' },
       { icon: Users, title: '전담 담당제', desc: '기업 1사에 1명이 전담 대응. 마치 자사 직원과 같은 지속적인 지원이 가능합니다.' },
-      { icon: Award, title: '심플・명확한 요금', desc: '업계 최저 수준의 정액제. 옵션은 사전에 안내드리며, 추가 비용은 발생하지 않습니다.' },
+      { icon: Award, title: '심플・명확한 요금', desc: '초기 비용 90만 엔～, 월 9만 엔의 명확한 정액제. 옵션은 사전에 안내드리며, 추가 비용은 발생하지 않습니다.' },
       { icon: Globe, title: '한일 능통 스태프', desc: '일본 거주 한일 능통 스태프. 양국 문화를 깊이 이해한 대응 가능.' },
       { icon: TrendingUp, title: '진출 준비부터 일관 대응', desc: '법인 설립・계좌 개설 등 준비 단계부터 일상 백오피스 업무까지 일관 지원.' },
       { icon: Clock, title: '바로 시작 가능', desc: '문의 후 최단 1주일 만에 서비스 시작. LINE WORKS로 담당자와 즉시 연동.' },
@@ -229,7 +233,7 @@ const T = {
     faqs: [
       { q: '계약 기간이 있나요?', a: '최소 계약 기간은 없습니다. 월 단위로 계약하실 수 있습니다. 단, 업무 인수인계 등을 위해 해지 시 1개월 전 사전 통보를 부탁드립니다.' },
       { q: '중도 해지는 가능한가요?', a: '네, 가능합니다. 1개월 전에 연락주시면 언제든지 해지하실 수 있습니다. 위약금 등은 일절 발생하지 않습니다.' },
-      { q: '비용은 어느 정도인가요？', a: '초기 비용・월정액 모두 업계 최저 수준을 목표로 하고 있습니다. 자세한 사항은 무료 상담에서 안내드립니다.' },
+      { q: '비용은 어느 정도인가요？', a: '초기 비용은 90만 엔～, 월정액은 9만 엔입니다(모두 부가세 별도). 초기 비용은 설립 내용에 따라 달라지므로, 자세한 사항은 무료 상담에서 안내드립니다.' },
       { q: '서비스 시작까지 얼마나 걸리나요?', a: '계약 후 최단 1주일 만에 서비스를 시작할 수 있습니다. 담당자 배정과 LINE WORKS 설정 완료 후 바로 업무를 시작합니다.' },
       { q: '일본어를 못해도 괜찮나요?', a: '물론입니다. 담당 스태프는 한일 양국어에 능통합니다. 한국어로 소통이 가능하므로 일본어는 전혀 필요하지 않습니다.' },
       { q: '어떤 업종의 기업이 이용할 수 있나요?', a: 'IT・SaaS, 코스메・뷰티, 식품・제조업, EC・소매업 등 업종에 관계없이 이용하실 수 있습니다. 일본 진출을 검토 중이거나 이미 진출하신 한국 기업이라면 누구든지 대응 가능합니다.' },
@@ -303,10 +307,12 @@ const T = {
     pricingTitle: 'Simple,\nTransparent Pricing',
     pricingDesc: 'Simple and clear pricing. Options are communicated upfront — no unexpected charges.',
     initialFee: 'Initial Plan',
-    initialPrice: 'Industry-Leading Value',
+    initialAmount: '¥900,000',
+    initialUnit: '~ (excl. tax)',
     initialNote: 'All-inclusive package from incorporation to bank account opening and capital transfer. Contact us for details.',
     monthlyFee: 'Monthly Plan',
-    monthlyPrice: 'Simple Flat Rate',
+    monthlyAmount: '¥90,000',
+    monthlyUnit: '/ month (excl. tax)',
     monthlyNote: 'No complex pricing. Required options communicated upfront.',
     planIncludes: 'Monthly Service Includes',
     planItems: [
@@ -334,7 +340,7 @@ const T = {
     whyItems: [
       { icon: Shield, title: 'Specialized in Korea→Japan', desc: 'We deeply understand the unique challenges Korean companies face entering Japan — language, culture, and legal systems.' },
       { icon: Users, title: 'Dedicated Contact Person', desc: 'One dedicated staff member per company, no rotation — building a working relationship as close as an in-house employee.' },
-      { icon: Award, title: 'Simple & Transparent Pricing', desc: 'Industry-leading value with a simple flat rate. Options are communicated upfront — no unexpected charges.' },
+      { icon: Award, title: 'Simple & Transparent Pricing', desc: 'A clear flat rate: from ¥900,000 initial and ¥90,000 per month. Options are communicated upfront — no unexpected charges.' },
       { icon: Globe, title: 'Bilingual Staff', desc: 'Japan-based Korean-Japanese bilingual staff, deeply familiar with both cultures.' },
       { icon: TrendingUp, title: 'End-to-End Support', desc: 'From incorporation and bank accounts to daily back-office work — we stay with you throughout your Japan journey.' },
       { icon: Clock, title: 'Start in as Little as 1 Week', desc: 'Reach out today and be operational within a week. Coordinate instantly via LINE WORKS.' },
@@ -359,7 +365,7 @@ const T = {
     faqs: [
       { q: 'Is there a minimum contract period?', a: 'No minimum contract period. You can subscribe on a monthly basis. We simply ask for 1 month\'s notice if you wish to cancel, to allow for proper handover.' },
       { q: 'Can I cancel anytime?', a: 'Yes. With 1 month\'s notice, you can cancel at any time. There are no cancellation fees.' },
-      { q: 'How much does it cost?', a: 'Both the initial fee and monthly fee are designed to be industry-leading value. Please contact us for details in a free consultation.' },
+      { q: 'How much does it cost?', a: 'The initial fee starts from ¥900,000 and the monthly fee is ¥90,000 (both excl. tax). The initial fee varies by the scope of incorporation, so please contact us for details in a free consultation.' },
       { q: 'How long until service begins?', a: 'Service can begin as quickly as 1 week after signing. Once your dedicated staff member is assigned and LINE WORKS is set up, we\'re ready to go.' },
       { q: 'Is Japanese language required?', a: 'Not at all. Our staff are fully bilingual in Korean and Japanese. All communication can be conducted in Korean.' },
       { q: 'What industries do you support?', a: 'We support companies across all industries — IT/SaaS, cosmetics, food manufacturing, e-commerce, and more. Any Korean company planning or already operating in Japan is welcome.' },
@@ -692,8 +698,8 @@ export default function Home() {
             </div>
             <div>
               <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.6rem', letterSpacing: '.2em', color: 'rgba(255,255,255,.25)', marginBottom: '.9rem', textTransform: 'uppercase' }}>Pricing</p>
-              <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.82rem', color: 'rgba(255,255,255,.5)', marginBottom: '.4rem' }}>{t.initialFee}: {t.initialPrice}</p>
-              <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.82rem', color: 'rgba(255,255,255,.5)', marginBottom: '.4rem' }}>{t.monthlyFee}: {t.monthlyPrice}/mo</p>
+              <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.82rem', color: 'rgba(255,255,255,.5)', marginBottom: '.4rem' }}>{t.initialFee}: {t.initialAmount}{t.initialUnit}</p>
+              <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.82rem', color: 'rgba(255,255,255,.5)', marginBottom: '.4rem' }}>{t.monthlyFee}: {t.monthlyAmount} {t.monthlyUnit}</p>
             </div>
             <div>
               <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.6rem', letterSpacing: '.2em', color: 'rgba(255,255,255,.25)', marginBottom: '.9rem', textTransform: 'uppercase' }}>Contact</p>
@@ -806,7 +812,7 @@ function SetupSection({ t }: { t: typeof T[keyof typeof T] }) {
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.9rem', color: '#7A6A5A', lineHeight: 1.95, fontWeight: 300, marginBottom: '2rem' }}>{t.setupDesc}</p>
             <div style={{ padding: '1.5rem', background: '#F5EDE3', borderLeft: '3px solid #C8572A' }}>
               <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.85rem', color: '#5A4A3A', lineHeight: 1.8 }}>
-                {t.langCode === 'ko' ? '법인 설립부터 은행 계좌 개설・자본금 송금까지\n모두 포함된 원 패키지（업계 최저 수준）' : t.langCode === 'en' ? 'All-inclusive one package from incorporation\nto bank account opening & capital transfer (industry-leading value).' : '法人設立から銀行口座開設・資本金送金まで\nすべて込みのワンパッケージ（業界最安水準）'}
+                {t.langCode === 'ko' ? '법인 설립부터 은행 계좌 개설・자본금 송금까지\n모두 포함된 원 패키지' : t.langCode === 'en' ? 'All-inclusive one package from incorporation\nto bank account opening & capital transfer.' : '法人設立から銀行口座開設・資本金送金まで\nすべて込みのワンパッケージ'}
               </p>
               <a href="#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '.5rem', marginTop: '1rem', background: '#C8572A', color: 'white', padding: '.6rem 1.4rem', borderRadius: '1px', fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.78rem', letterSpacing: '.08em', textDecoration: 'none' }}>
                 {t.heroCta1} <ArrowRight size={13} />
@@ -840,10 +846,13 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }} className="grid2">
           <div className={`reveal ${inView ? 'in' : ''}`} style={{ border: '1px solid rgba(200,87,42,.2)', padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,transparent,rgba(200,87,42,.4),transparent)' }} />
-            {/* 初期プラン + （業界最安水準）横並び */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1.2rem', flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', lineHeight: 1 }}>{t.initialFee}</span>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.5rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.initialPrice}）</span>
+            {/* 初期プラン + 金額 */}
+            <div style={{ marginBottom: '1.2rem' }}>
+              <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.8rem', letterSpacing: '.2em', color: '#E8956A', marginBottom: '.8rem' }}>{t.initialFee}</p>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '.7rem', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '4rem', fontWeight: 600, color: 'white', lineHeight: 1, letterSpacing: '.01em' }}>{t.initialAmount}</span>
+                <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.85rem', color: 'rgba(255,255,255,.55)' }}>{t.initialUnit}</span>
+              </div>
             </div>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.2rem' }} />
             <p style={{ fontFamily: 'Noto Serif JP,serif', fontSize: '.83rem', color: 'rgba(255,255,255,.5)', lineHeight: 1.85 }}>{t.initialNote}</p>
@@ -854,10 +863,13 @@ function PricingSection({ t }: { t: typeof T[keyof typeof T] }) {
           <div className={`plncard reveal ${inView ? 'in' : ''}`}
             style={{ border: '1px solid rgba(200,87,42,.4)', padding: '2.5rem', position: 'relative', overflow: 'hidden', transitionDelay: '.1s', background: 'rgba(200,87,42,.06)' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: '#C8572A' }} />
-            {/* 月額プラン + （シンプル定額制）横並び */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '.3rem', flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '2.8rem', color: 'rgba(255,255,255,.6)', letterSpacing: '.04em', lineHeight: 1 }}>{t.monthlyFee}</span>
-              <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '1.5rem', fontWeight: 500, color: '#E8956A', lineHeight: 1 }}>（{t.monthlyPrice}）</span>
+            {/* 月額プラン + 金額 */}
+            <div style={{ marginBottom: '.8rem' }}>
+              <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.8rem', letterSpacing: '.2em', color: '#E8956A', marginBottom: '.8rem' }}>{t.monthlyFee}</p>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '.7rem', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'Cormorant Garamond,serif', fontSize: '4rem', fontWeight: 600, color: 'white', lineHeight: 1, letterSpacing: '.01em' }}>{t.monthlyAmount}</span>
+                <span style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.85rem', color: 'rgba(255,255,255,.55)' }}>{t.monthlyUnit}</span>
+              </div>
             </div>
             <p style={{ fontFamily: 'Noto Sans JP,sans-serif', fontSize: '.7rem', color: 'rgba(255,255,255,.4)', marginBottom: '1.5rem' }}>{t.monthlyNote}</p>
             <div style={{ height: 1, background: 'rgba(255,255,255,.07)', marginBottom: '1.5rem' }} />
